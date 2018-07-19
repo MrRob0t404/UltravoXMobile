@@ -1,13 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import axios from 'axios'
 
-import BusRoute from './Components/BusRoute.js'
+//Importing all components
+import BusRoute from './Components/BusRoute';
+import BusTime from './Components/BusTime';
+import BusStop from './Components/BusStop';
+
+//Importing speech recognition import Voice from 'react-native-voice';
 
 export default class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       eta: '',
       minutesAway: '',
@@ -17,25 +22,34 @@ export default class App extends React.Component {
       listening: false,
       listening2: false
     }
+
+    // Voice.onSpeechStart = this   .onSpeechStartHandler   .bind(this);
+    // Voice.onSpeechEnd = this   .onSpeechEndHandler   .bind(this);
+    // Voice.onSpeechResults = this   .onSpeechResultsHandler   .bind(this);
   }
 
-  handleClick =() => { 
+  //Event for when a button is clicked
+  handleClick = (e) => {
     console.log('clicked')
+    // Voice.start('en-US');
   }
 
   render() {
     return (
 
       <View style={styles.container}>
-        <Text style={styles.text} onClick={this.handleClick}>Bus Route</Text>
-        <Text style={styles.text}>Bus Stop
-        </Text>
-        <Text style={styles.text}>Bus Time</Text>
+
+        <Text>ULTRAVOX</Text>
+        <BusRoute handleClick={this.handleClick}/>
+        <BusStop handleClick={this.handleClick}/>
+        <BusTime handleClick={this.handleClick}/>
+
       </View>
-    );
+    )
   }
 }
 
+//Only styles the view container
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,14 +57,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  text: {
+  //For buttons
+  button: {
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: 'grey',
     alignSelf: 'stretch',
+    padding: 25,
+    minHeight: 160,
+    marginTop: 30,
+    marginBottom: 5,
     textAlign: 'center',
-    padding: 70.5,
-    minHeight: 150, 
-    margin: 30
+    backgroundColor: 'blue'
+  },
+  image: {
+    width: 80.5,
+    height: 70.5,
+    marginLeft: 120,
+    marginRight: 120,
+    paddingTop: 90
   }
 });

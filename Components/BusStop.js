@@ -1,0 +1,38 @@
+import React from 'react'
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
+
+class BusStop extends React.Component {
+    render() {
+        return (
+            <TouchableOpacity style={styles.button} onPress={this.props.handleClick}>
+                <Image
+                    source={require('.././Assets/Images/microphone.png')}
+                    style={styles.image}/>
+            </TouchableOpacity>
+        )
+    }
+};
+
+const styles = StyleSheet.create({
+    button: {
+        borderRadius: 4,
+        borderWidth: 2,
+        borderColor: 'grey',
+        alignSelf: 'stretch',
+        padding: 25,
+        minHeight: 160,
+        marginTop: 30,
+        marginBottom: 5,
+        // textAlign: 'center',
+        backgroundColor: 'blue'
+    },
+    image: {
+        width: 80.5,
+        height: 70.5,
+        marginLeft: 120,
+        marginRight: 120,
+        paddingTop: 90
+    }
+})
+
+export default BusStop;
