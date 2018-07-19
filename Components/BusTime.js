@@ -9,7 +9,7 @@ class BusTime extends React.Component {
 
     render() {
         return (
-            <TouchableOpacity style={styles.button} onPress={this.props.handleClick}>
+            <TouchableOpacity style={styles.button}>
                 <Text fontSize={90}>
                     Bus Time
                 </Text>
@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         padding: 25,
         minHeight: 160,
-        marginTop: 5,
-        marginBottom: 10,
-        textAlign: 'center',
+        marginTop: 30,
+        marginBottom: 5,
+        // textAlign: 'center',
         backgroundColor: 'blue'
     }
 })

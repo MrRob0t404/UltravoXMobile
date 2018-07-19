@@ -21,14 +21,17 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         padding: 25,
         minHeight: 160,
-        marginTop: 10,
-        marginBottom: 10,
-        textAlign: 'center',
+        marginTop: 30,
+        marginBottom: 5,
+        // textAlign: 'center',
         backgroundColor: 'blue'
     },
     image: {
-        width: 70.5,
-        height: 70.5
+        width: 80.5,
+        height: 70.5,
+        marginLeft: 120,
+        marginRight: 120,
+        paddingTop: 90
     }
 })
 
